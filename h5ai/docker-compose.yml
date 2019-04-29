@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
  h5ai:
   image: clue/h5ai
@@ -6,4 +6,5 @@ services:
   volumes:
    - /data:/var/www
   ports:
-   - "9002:80"
+   - 9002:80
+  restart: unless-stopped

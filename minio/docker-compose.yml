@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
  minio:
   image: minio/minio:RELEASE.2019-04-23T23-50-36Z
@@ -9,5 +9,6 @@ services:
    - "9001:9000"
   environment:
    MINIO_ACCESS_KEY: admin
-   MINIO_SECRET_KEY: appannie
+   MINIO_SECRET_KEY: admin
   command: server /data
+  restart: unless-stopped

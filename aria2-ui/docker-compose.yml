@@ -1,0 +1,15 @@
+version: "2"
+services:
+  aria2ui:
+    image: wahyd4/aria2-ui
+    container_name: aria2ui
+    ports:
+      - 9003:80
+      - 6800:6800
+    environment:
+      - ENABLE_AUTH=true
+      - ARIA2_USER=admin
+      - ARIA2_PWD=admin
+    volumes:
+      - /docker/aria2ui/data:/data
+    restart: unless-stopped

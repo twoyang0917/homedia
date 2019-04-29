@@ -1,0 +1,13 @@
+version: "2"
+services:
+  handbrake:
+    image: jlesage/handbrake
+    container_name: handbrake
+    ports:
+      - 5800:5800
+    volumes:
+      - /docker/handbrake/config:/config
+      - /docker/handbrake/watch:/watch
+      - /docker/handbrake/output:/output
+      - /data:/storage:ro
+    restart: unless-stopped

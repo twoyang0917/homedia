@@ -11,3 +11,4 @@ services:
       - /docker/heimdall/config:/config
     ports:
       - 80:80
+    restart: unless-stopped
