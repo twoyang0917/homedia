@@ -1,0 +1,9 @@
+version: '2'
+services:
+ h5ai:
+  image: clue/h5ai
+  container_name: h5ai
+  volumes:
+   - /data:/var/www
+  ports:
+   - "9002:80"
