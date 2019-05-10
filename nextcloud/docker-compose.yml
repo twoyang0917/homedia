@@ -3,7 +3,7 @@ services:
   db:
     image: mariadb
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
-    restart: always
+    restart: unless-stopped
     volumes:
       - /docker/mariadb/data:/var/lib/mysql
     environment:
@@ -19,4 +19,4 @@ services:
       - db
     volumes:
       - /docker/nextcloud/data:/var/www/html
-    restart: always
+    restart: unless-stopped
